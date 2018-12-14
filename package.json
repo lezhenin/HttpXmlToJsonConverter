@@ -1,9 +1,17 @@
 {
-  "name": "HttpXmlToJson",
+  "name": "httpxmltojson",
   "version": "0.0.0",
   "private": true,
+  "config": {
+    "docker": {
+      "port": 80
+    }
+  },
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "docsgen": "jsdoc -d=docs -a *.js",
+    "docker:build": "docker build -t ${npm_package_name} .",
+    "docker:run": "docker run -p ${npm_package_config_docker_port}:3000 ${npm_package_name}"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
