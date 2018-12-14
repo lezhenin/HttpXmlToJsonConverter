@@ -17,11 +17,12 @@ app.post('/', handler);
 
 /** @function
  *  @name hanlder
- *  @callback
  *
  *  Post handler for http server. Interpret body as
  *  string and try to convert xml to json. On success
  *  send json string with code 200.
+ *
+ *  @callback
  *
  *  @param req - request object
  *  @param res - response object
